@@ -20,20 +20,24 @@ Tari, the recommended approach is to run the Tari binaries or compile from sourc
 
 ### Installing Minotari Node
 > NOTE: If you are using a public `minotari_node`, you can skip this section
-1. [Install the minotari_node](https://github.com/tari-project/tari?tab=readme-ov-file#installing-using-binaries)
-1. Start the node:
+
+B1. [Install the minotari_node](https://github.com/tari-project/tari?tab=readme-ov-file#installing-using-binaries)
+
+B2. Start the node:
 
 ```
 minotari_node --init
 ```
 
-1. Start the node. 
+B3. Start the node. 
 ```
 minotari_node
 ```
 
-1. Press Ctrl+C to enter the command mode
-1. Type `whoami` and press enter. You'll see something like this. You should copy this data to a file for future reference.
+B4. Press Ctrl+C to enter the command mode
+
+B5. Type `whoami` and press enter. You'll see something like this. You should copy this data to a file for future reference.
+
 ```
 18:46 v1.0.0-pre.16 esmeralda State: Listening Tip: 3872 (Tue, 23 Jul 2024 14:27:53 +0000) Mempool: 0tx (0g, +/- 0blks) Connections: 0|0 Banned: 0 Messages (last 60s): 0 Rpc: 0/100 ️🔌
 >> whoami
@@ -43,7 +47,7 @@ Public Addresses: /onion3/f5qbkkfkoxowzvshe5mppzpgiiy76cwumpsacungeldoal6hehcgzf
 Features: PeerFeatures(MESSAGE_PROPAGATION | DHT_STORE_FORWARD)
 ```
 
-1. Restart the node.
+B6. Restart the node.
 
 ### Setting up a send and receive address
 
@@ -259,11 +263,89 @@ grpc_enabled = true
 #grpc_authentication = { username = "admin", password = "xxxx" }
 ```
 
-> If you wish to secure the GRPC more, you can edit the other settings. It is important that the wallet's gRPC port is not accessible from the public internet
+> If you wish to secure the gRPC more, you can edit the other settings. It is important that the wallet's gRPC port is not accessible from the public internet
 
+27. Set the wallet's base node. Set this value to the `minotari_node` you created or chose at the beginning of this guide in step B5.
 
+> The format is `<public_key>::<public address>`. This is what it should look like using the example data from step B5. You should not use the data below, but insert your own details.
 
+```toml
+# A custom base node peer that will be used to obtain metadata from, example
+# "0eefb45a4de9484eca74846a4f47d2c8d38e76be1fec63b0112bd00d297c0928::/ip4/13.40.98.39/tcp/18189"
+# (default = )
+custom_base_node = "90f67a04edcb36261e6304ca213629d183c44e26bd47e38c253473f44d901733::/onion3/f5qbkkfkoxowzvshe5mppzpgiiy76cwumpsacungeldoal6hehcgzfqd:18141"
+```
 
+28. Save the file and start the wallet again.
+
+```
+minotari_console_wallet
+```
+
+You are now ready to receive deposits. In the next section we'll list for incoming transactions.
+
+### Listening for incoming transactions
+
+Depending on your process, we'll use the gRPC server that is hosted in the read-only wallet we just created to listen for incoming deposits. 
+
+In this example we will use NodeJS. Reach out to us if you would like an example in your favourite language
+
+```javascript
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+
+// Load the protobuf
+const PROTO_PATH = './proto/wallet.proto';
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true
+});
+const streamingProto = grpc.loadPackageDefinition(packageDefinition).tari.rpc;
+
+// Create a client
+console.log(streamingProto);
+const client = new streamingProto.Wallet('localhost:18143', grpc.credentials.createInsecure());
+
+const request = {};
+
+// Call the gRPC method
+const call = client.GetCompletedTransactions(request);
+
+// Handle the stream of responses
+call.on('data', (response) => {
+    console.log('Received data:', response);
+    // ..... Do business logic with transaction. E.g. compare the reference in payment_id to a reference provided to the exchange client and allocate
+    // to their account
+    // ....
+});
+
+call.on('end', () => {
+    console.log('Stream ended.');
+});
+
+call.on('error', (err) => {
+    console.error('Stream error:', err);
+});
+
+call.on('status', (status) => {
+    console.log('Stream status:', status);
+});
+
+```
+
+#### An example for receiving funds
+
+Each exchange will have their own processes, but here is an example of receiving funds from a KYC'ed client. 
+
+1. The client begins the deposit process. For example, clicking on a "Deposit" button
+2. The exchange generates a long unique ID for the deposit. This may be a single reference that is reused for the client, or every 
+deposit may have their own reference.
+3. The exchange provides their `Tari Address` (from step 9 of the previous section) and the reference to the client. The exchange must also save this reference in their internal database.
+> Note: Exchanges should use the one-sided or non-interactive addresses instead of interactive addresses so that they can receive deposits even if their infrastructure is offline. Interactive addresses are intended for peer-to-peer transactions.
+4. 
 
 
 
