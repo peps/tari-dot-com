@@ -18,7 +18,7 @@ Tari, the recommended approach is to run the Tari binaries or compile from sourc
 
 > NOTE: For all servers connected to the internet, they must either be running a Tor client or configure public IP information. Documentation on this is available [here](https://github.com/tari-project/tari#README) and [here] (https://github.com/tari-project/tari/discussions/6366). If you are running on Linux, the Tari applications have built-in Tor support, so this can be ignored.
 
-### Installing Minotari Node
+### Section 1: Installing Minotari Node
 > NOTE: If you are using a public `minotari_node`, you can skip this section
 
 B1. [Install the minotari_node](https://github.com/tari-project/tari?tab=readme-ov-file#installing-using-binaries)
@@ -49,7 +49,7 @@ Features: PeerFeatures(MESSAGE_PROPAGATION | DHT_STORE_FORWARD)
 
 B6. Restart the node.
 
-### Setting up a send and receive address
+### Section 2: Setting up a send and receive address
 
 In this section we'll create a wallet address for receiving funds. 
 
@@ -173,7 +173,7 @@ Press Enter to continue to the wallet, or type q (or quit) followed by Enter.
 
 16. Make sure you have saved the above data. You can now destroy the folder `tari_wallet_data` and even the machine if you wish.
 
-### Setting up a read-only wallet to receive deposits
+### Section 3: Setting up a read-only wallet to receive deposits
 
 In this section, we will create a read-only wallet that will watch for funds received at the address saved in step 10. If you are integrating an exchange, this is 
 how you can watch for received funds. 
@@ -284,7 +284,7 @@ minotari_console_wallet
 
 You are now ready to receive deposits. In the next section we'll list for incoming transactions.
 
-### Listening for incoming transactions
+### Section 4: Listening for incoming transactions
 
 Depending on your process, we'll use the gRPC server that is hosted in the read-only wallet we just created to listen for incoming deposits. 
 
@@ -336,18 +336,68 @@ call.on('status', (status) => {
 
 ```
 
-#### An example for receiving funds
+### Section 5: An example for receiving funds
 
 Each exchange will have their own processes, but here is an example of receiving funds from a KYC'ed client. 
 
 1. The client begins the deposit process. For example, clicking on a "Deposit" button
 2. The exchange generates a long unique ID for the deposit. This may be a single reference that is reused for the client, or every 
 deposit may have their own reference.
-3. The exchange provides their `Tari Address` (from step 9 of the previous section) and the reference to the client. The exchange must also save this reference in their internal database.
+3. The exchange provides their `Tari Address` (from step 9 of Section 3) and the reference to the client. The exchange must also save this reference in their internal database.
 > Note: Exchanges should use the one-sided or non-interactive addresses instead of interactive addresses so that they can receive deposits even if their infrastructure is offline. Interactive addresses are intended for peer-to-peer transactions.
-4. 
+4. The client uses Tari Aurora or another Tari enabled wallet and sends a non-interactive transaction to the provided address. They must include the provided reference with this transaction.
+5. A process similar to the example in Section 4, the exchange periodically runs the script to see if there are any new transactions
+6. For new transactions, compare against the list of expected references in their internal database and if there is a match, call the internal system to allocate funds to the client's account.
 
+### Section 6: Performing withdrawals
 
+In this section we'll perform a withdrawal from the same address we used in section 3. It is also possible to have a number of different wallets and send funds between them. The process is mostly the same, but is out of scope for this document.
+
+> NOTE: The wallet used to spend funds should not be online for more time than is necessary. It is recommended that the machine running this wallet is secured.
+
+Before we spend funds, we must have a wallet set up with the seed words created in Step 7 of Section 2. 
+
+Once the wallet is set up, continue with the steps below.
+
+1. Run the wallet to update the balance
+
+```
+minotari_console_wallet --password <password> --p"wallet.custom_base_node='<node_pub_key>::<node_pub_address>'" --auto-exit sync
+```
+
+> TIP: The custom base node can also be set as an environment variable `TARI_WALLET__CUSTOM_BASE_NODE`
+
+2. Validate there are sufficient funds in the wallet
+```
+minotari_console_wallet --password <password> --p"wallet.custom_base_node='<node_pub_key>::<node_pub_address>'" --auto-exit get-balance
+```
+
+```
+Minotari Console Wallet running... (Command mode started)
+==============
+Command Runner
+==============
+
+1. GetBalance
+
+Available balance: 10000.000000 T
+Time locked: 0 µT
+Pending incoming balance: 27960.980255 T
+Pending outgoing balance: 0 µT
+
+Minotari Console Wallet running... (Command mode completed)
+
+```
+
+3. Send funds to the desired address
+
+```
+minotari_console_wallet --password <password> --p"wallet.custom_base_node='<node_pub_key>::<node_pub_address>'" --auto-exit send-minotari <amount> <destination>
+
+```
+Replace `<amount>` and `<destination>` with the amount to send and Tari address to send funds to. 
+
+> IMPORTANT: Exchanges should not allow clients to provide interactive Tari Addresses. This can be easily validated by checking the second byte of the address.
 
 
 
