@@ -288,7 +288,7 @@ You are now ready to receive deposits. In the next section we'll list for incomi
 
 Depending on your process, we'll use the gRPC server that is hosted in the read-only wallet we just created to listen for incoming deposits. 
 
-In this example we will use NodeJS. Reach out to us if you would like an example in your favourite language
+In this example we will use NodeJS. Reach out to us if you would like an example in your favourite language.
 
 ```javascript
 const grpc = require('@grpc/grpc-js');
