@@ -16,7 +16,7 @@ It may also be worth running multiple nodes as backups to ensure availability.
 > NOTE: For end users, it is recommended to use Tari Launchpad which is built for ease of use. If you are not an exchange user, download [Tari Launchpad](https://tari.com/downloads) instead. For exchanges and businesses accepting
 Tari, the recommended approach is to run the Tari binaries or compile from source.
 
-> NOTE: For all servers connected to the internet, they must either be running a Tor client or configure public IP information. Documentation on this is available [here](https://github.com/tari-project/tari#README) and [here] (https://github.com/tari-project/tari/discussions/6366). If you are running on Linux, the Tari applications have built-in Tor support, so this can be ignored.
+> NOTE: For all servers connected to the internet, they must either be running a Tor client or configure public IP information. Documentation on this is available [here](https://github.com/tari-project/tari#README) and [here](https://github.com/tari-project/tari/discussions/6366). If you are running on Linux, the Tari applications have built-in Tor support, so this can be ignored.
 
 ### Section 1: Installing Minotari Node
 > NOTE: If you are using a public `minotari_node`, you can skip this section
