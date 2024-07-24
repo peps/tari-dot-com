@@ -141,7 +141,7 @@ Type the word "confirm" to continue.
 
 11. Press `f10` to exit the wallet
 
-12. Next, we'll export the view key for the wallet.
+12. Next, we'll export the view key for the wallet. (We'll use this in step 21)
 Run
 
 ```
@@ -395,7 +395,7 @@ Minotari Console Wallet running... (Command mode completed)
 minotari_console_wallet --password <password> --p"wallet.custom_base_node='<node_pub_key>::<node_pub_address>'" --auto-exit send-minotari <amount> <destination>
 
 ```
-Replace `<amount>` and `<destination>` with the amount to send and Tari address to send funds to. 
+Replace `<amount>` and `<destination>` with the amount to send and Tari address to send funds to. Note: The amount is specified in units of 0.000001 XTM. To specify the amount in Tari, you can append the letter `T`. For example, `send-minotari 10000` would send an amount of `0.01 XTM`. `send-minotari 100T` would send an amount of `100 XTM`.
 
 > IMPORTANT: Exchanges should not allow clients to provide interactive Tari Addresses. This can be easily validated by checking the second byte of the address.
 
