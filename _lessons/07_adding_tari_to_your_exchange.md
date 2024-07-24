@@ -29,7 +29,7 @@ B2. Start the node (first-time use):
 minotari_node --init
 ```
 
-B3. Start the node. 
+B3. Start the node (consecutive runs): 
 ```
 minotari_node
 ```
