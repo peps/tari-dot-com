@@ -346,7 +346,7 @@ deposit may have their own reference.
 3. The exchange provides their `Tari Address` (from step 9 of Section 3) and the reference to the client. The exchange must also save this reference in their internal database.
 > Note: Exchanges should use the one-sided or non-interactive addresses instead of interactive addresses so that they can receive deposits even if their infrastructure is offline. Interactive addresses are intended for peer-to-peer transactions.
 4. The client uses Tari Aurora or another Tari enabled wallet and sends a non-interactive transaction to the provided address. They must include the provided reference with this transaction.
-5. A process similar to the example in Section 4, the exchange periodically runs the script to see if there are any new transactions
+5. A process similar to the example in Section 4, the exchange periodically runs the script to see if there are any new transactions.
 6. For new transactions, compare against the list of expected references in their internal database and if there is a match, call the internal system to allocate funds to the client's account.
 
 ### Section 6: Performing withdrawals
