@@ -23,7 +23,7 @@ Tari, the recommended approach is to run the Tari binaries or compile from sourc
 
 B1. [Install the minotari_node](https://github.com/tari-project/tari?tab=readme-ov-file#installing-using-binaries)
 
-B2. Start the node:
+B2. Start the node (first-time use):
 
 ```
 minotari_node --init
