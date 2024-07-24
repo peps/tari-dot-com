@@ -125,7 +125,7 @@ Type the word "confirm" to continue.
 >>
 ```
 
-8. When you have made a backup of these seed words. Type `confirm`.
+8. When you have made a backup of these seed words, type `confirm`.
 
 9. You will now see the wallet. Press the right arrow twice to get to the `Receive` tab.
 
