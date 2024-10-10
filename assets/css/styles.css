@@ -30,6 +30,7 @@ title: CSS stylesheet
 :root {
   --root-size: 10px;
   --max-content-width: 100%;
+  --tari-purple: #9330ff;
 }
 
 /* body */
@@ -2522,6 +2523,35 @@ body.page- #call-to-action {
   }
 }
 
+#pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#pagination-controls > a {
+  margin: 2px;
+  border-radius: 5px;
+}
+
+#active-pagination {
+  background: var(--tari-purple);
+}
+
+#active-pagination {
+  color: white !important;
+}
+
+.page-link {
+  color: var(--tari-purple);
+}
+
+.page-link:hover {
+  color: var(--tari-purple);
+}
+
 /* 404 */
 
 .page404 {
@@ -2567,3 +2597,5 @@ body.page- #call-to-action {
   font-family: Avenir-Light, 'Avenir-Light', 'Myriad Pro', Arial, Verdana !important;
   color: #ff0000;
 }
+
+/* Updates */

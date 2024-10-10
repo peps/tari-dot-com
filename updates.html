@@ -10,11 +10,10 @@ class: subpage blog
   {% include newsletter-subscribe.html %}
   <div class="content center-content">
     <div class="new-section">
-    <h1 id="blog">Updates</h1>
-    <p>The latest updates from developers contributing to the Tari protocol.</p>
-
-  </div>
-  <p>Have questions or want to contribute? Join the community discussion on <a href="https://discord.gg/tari" target="_blank">Discord</a> or #tari-dev on <a href="https://libera.chat/" target="_blank">Libera.Chat</a>. You can also subscribe to these updates using <a href="/feed.xml">the RSS Feed</a>.</p>
+      <h1 id="blog">Updates</h1>
+      <p>The latest updates from developers contributing to the Tari protocol.</p>
+    </div>
+    <p>Have questions or want to contribute? Join the community discussion on <a href="https://discord.gg/tari" target="_blank">Discord</a> or #tari-dev on <a href="https://libera.chat/" target="_blank">Libera.Chat</a>. You can also subscribe to these updates using <a href="/feed.xml">the RSS Feed</a>.</p>
 
     <div
       style="max-width: var(--max-content-width);"
@@ -29,5 +28,8 @@ class: subpage blog
       {% assign updates = site.updates | sort:"date" | reverse %}
       {% for post in updates %} {% include updates-area.html %} {% endfor %}
     </div>
+    <div id="pagination-controls"></div>
   </div>
 </section>
+
+<script src="/assets/js/pagination.js"></script>
