@@ -103,7 +103,7 @@
   display: flex;
   width: 226px;
   height: 59px;
-  padding: 24px 80px 24px 30px;
+  padding: 0 54px 0 0;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -121,6 +121,7 @@
   position: relative;
 
   transition: transform 0.2s ease-in-out;
+  white-space: nowrap;
 }
 
 #universe .universe_button-group .universe_button-purple:hover {
@@ -140,14 +141,23 @@
   align-items: center;
 }
 
-#universe .universe_button-group .universe_button-outline {
+#universe .universe_button-group .universe_button-purple .universe_button-text {
+  height: 100%;
+
   display: flex;
-  width: 226px;
-  height: 59px;
-  padding: 24px 39px 24px 69px;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  width: 100%;
+}
+
+#universe .universe_button-group .universe_button-outline {
+  width: 226px;
+  height: 59px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
   border-radius: 3px;
   border: 1px solid #9330ff;
@@ -160,6 +170,7 @@
   font-weight: 700;
   line-height: 93%;
   text-transform: uppercase;
+  white-space: nowrap;
 
   position: relative;
 
@@ -171,7 +182,8 @@
 }
 
 #universe .universe_button-gem {
-  position: absolute;
-  top: 10px;
-  left: 19px;
+  width: 42px;
+  height: unset !important;
+  flex: unset !important;
+  transform: translateY(1px);
 }
