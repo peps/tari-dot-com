@@ -263,8 +263,7 @@ lottie-player {
   display: block;
   width: inherit;
   height: inherit;
-  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat
-    calc(0 * var(--root-size)) top;
+  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat calc(0 * var(--root-size)) top;
   background-size: calc(8 * var(--root-size)) auto;
 }
 #viewport aside#mobileSidebar #mobileNav {
@@ -340,8 +339,7 @@ lottie-player {
   display: block;
   width: inherit;
   height: inherit;
-  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat
-    center;
+  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat center;
   background-size: contain;
 }
 #viewport aside.mainMenu {
@@ -368,8 +366,7 @@ lottie-player {
   display: block;
   width: inherit;
   height: inherit;
-  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat
-    center;
+  background: url('{{ site.baseurl }}/assets/img/tari-logo.svg') no-repeat center;
   background-size: contain;
 }
 #viewport #menu h2,
@@ -377,8 +374,7 @@ lottie-player {
   font-family: Din-Bold, 'Din-Bold', 'Myriad Pro', Arial, Verdana !important;
   font-size: calc(2.4 * var(--root-size));
   line-height: calc(3 * var(--root-size));
-  margin: calc(2 * var(--root-size)) 0 calc(2 * var(--root-size))
-    calc(5 * var(--root-size));
+  margin: calc(2 * var(--root-size)) 0 calc(2 * var(--root-size)) calc(5 * var(--root-size));
   text-transform: uppercase;
 }
 #viewport #menu ul,
@@ -486,8 +482,7 @@ lottie-player {
   margin-bottom: 0;
 }
 #viewport #mobileMenu h2 {
-  margin: calc(3 * var(--root-size)) 0 calc(2 * var(--root-size))
-    calc(3.2 * var(--root-size));
+  margin: calc(3 * var(--root-size)) 0 calc(2 * var(--root-size)) calc(3.2 * var(--root-size));
 }
 #viewport #mobileMenu ul {
   margin: 0 0 calc(3 * var(--root-size)) calc(1 * var(--root-size));
@@ -663,7 +658,6 @@ lottie-player {
 
 /* Home page */
 .home #viewport section.main {
-  padding: 0 5%;
   position: relative;
 }
 .home #viewport section.main img {
@@ -777,9 +771,18 @@ lottie-player {
 
 /* Subpage */
 .subpage #viewport section.main {
-  padding: 0 8%;
   position: relative;
+  padding: 0 8%;
 }
+
+.subpage #viewport section.main .home-padding {
+  padding: 0 8%;
+}
+
+.home #viewport section.main {
+  padding: 0;
+}
+
 .blog #viewport section.main .content {
   padding: 200px 0 100px 0;
   max-width: var(--max-content-width);

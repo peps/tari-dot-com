@@ -1,0 +1,177 @@
+#universe {
+  width: 100%;
+  height: 1127px;
+  padding: 0 8%;
+  padding-top: 140px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url('/assets/img/universe/background.png');
+  background-size: cover;
+  background-position: center bottom;
+
+  @media only screen and (min-width: 2065px) {
+    background-position: center 55%;
+  }
+
+  @media only screen and (max-width: 1603px) {
+    padding-top: 180px;
+  }
+
+  @media only screen and (max-width: 1054px) {
+    height: 900px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 100px;
+    height: 697px;
+  }
+}
+
+#universe .universe_title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  max-width: 901px;
+  width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+}
+
+#universe .universe_title-group .universe_eyebrow {
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.6px;
+  margin-bottom: 30px;
+
+  @media only screen and (max-width: 1054px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+#universe .universe_title-group .universe_title {
+  color: #000;
+  text-align: center;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+
+  span {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+  }
+
+  @media only screen and (max-width: 1054px) {
+    font-size: 48px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 32px;
+  }
+}
+
+#universe .universe_button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+#universe .universe_button-group .universe_button-purple {
+  display: flex;
+  width: 226px;
+  height: 59px;
+  padding: 24px 80px 24px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  border-radius: 3px;
+  background: #9330ff;
+
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 93%;
+  text-transform: uppercase;
+  position: relative;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+#universe .universe_button-group .universe_button-purple:hover {
+  transform: scale(1.05);
+}
+
+#universe .universe_button-group .universe_button-purple .universe_button-arrow {
+  width: 54px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#universe .universe_button-group .universe_button-outline {
+  display: flex;
+  width: 226px;
+  height: 59px;
+  padding: 24px 39px 24px 69px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  border-radius: 3px;
+  border: 1px solid #9330ff;
+  background-color: #fafafa;
+
+  color: #9330ff;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 93%;
+  text-transform: uppercase;
+
+  position: relative;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+#universe .universe_button-group .universe_button-outline:hover {
+  transform: scale(1.05);
+}
+
+#universe .universe_button-gem {
+  position: absolute;
+  top: 10px;
+  left: 19px;
+}
