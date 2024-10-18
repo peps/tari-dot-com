@@ -1,32 +1,79 @@
+@keyframes universeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes universeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#universe .uanim-eyebrow {
+  opacity: 0;
+  display: inline-block;
+}
+
+#universe .uanim-eyebrow.uanim-animated {
+  animation: universeScaleIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+#universe .uanim {
+  opacity: 0;
+  display: inline-block;
+
+  @media only screen and (max-width: 1075px) {
+    display: inline;
+  }
+}
+
+#universe .uanim.uanim-animated {
+  animation: universeScaleIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+#universe .uanim-fade {
+  opacity: 0;
+  display: inline-block;
+}
+
+#universe .uanim-fade.uanim-animated {
+  animation: universeFadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
 #universe {
   width: 100%;
-  height: 1127px;
+  height: 100dvh;
   padding: 0 8%;
   padding-top: 140px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-  background-image: url('/assets/img/universe/background.png');
-  background-size: cover;
-  background-position: center bottom;
-
-  @media only screen and (min-width: 2065px) {
-    background-position: center 55%;
-  }
-
-  @media only screen and (max-width: 1603px) {
-    padding-top: 180px;
-  }
-
-  @media only screen and (max-width: 1054px) {
-    height: 900px;
-  }
+#universe video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 
   @media only screen and (max-width: 767px) {
-    padding-top: 100px;
-    height: 697px;
+    top: 65px;
   }
 }
 
@@ -38,6 +85,9 @@
   margin-bottom: 50px;
   max-width: 901px;
   width: 100%;
+
+  position: relative;
+  z-index: 1;
 
   @media only screen and (max-width: 767px) {
     margin-bottom: 20px;
@@ -73,9 +123,8 @@
   line-height: 100%;
   letter-spacing: -1.92px;
 
-  span {
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 400;
+  @media only screen and (max-width: 1355px) {
+    font-size: 48px;
   }
 
   @media only screen and (max-width: 1054px) {
@@ -87,12 +136,20 @@
   }
 }
 
+#universe .universe_title-group .universe_title .grey {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+
 #universe .universe_button-group {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
   width: 100%;
+
+  position: relative;
+  z-index: 1;
 
   @media only screen and (max-width: 767px) {
     flex-direction: column;

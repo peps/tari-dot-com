@@ -9,12 +9,25 @@ class: subpage home
 
   <div id="universe">
     <div class="universe_title-group">
-      <div class="universe_eyebrow">Tari is the L1 protocol powered by you.</div>
-      <div class="universe_title">Proof of work, beautiful apps anyone can use<span>, and an</span> ingenious app platform <span>to put all of its</span> power in your hands.</div>
+      <div class="universe_eyebrow">
+        <span class="uanim-eyebrow">T</span><span class="uanim-eyebrow">a</span><span class="uanim-eyebrow">r</span><span class="uanim-eyebrow">i</span><span class="uanim-eyebrow"> &nbsp; </span><span class="uanim-eyebrow">i</span
+        ><span class="uanim-eyebrow">s</span><span class="uanim-eyebrow"> &nbsp; </span><span class="uanim-eyebrow">t</span><span class="uanim-eyebrow">h</span><span class="uanim-eyebrow">e</span><span class="uanim-eyebrow"> &nbsp; </span
+        ><span class="uanim-eyebrow">L</span><span class="uanim-eyebrow">1</span><span class="uanim-eyebrow"> &nbsp; </span><span class="uanim-eyebrow">p</span><span class="uanim-eyebrow">r</span><span class="uanim-eyebrow">o</span
+        ><span class="uanim-eyebrow">t</span><span class="uanim-eyebrow">o</span><span class="uanim-eyebrow">c</span><span class="uanim-eyebrow">o</span><span class="uanim-eyebrow">l</span><span class="uanim-eyebrow"> &nbsp; </span
+        ><span class="uanim-eyebrow">p</span><span class="uanim-eyebrow">o</span><span class="uanim-eyebrow">w</span><span class="uanim-eyebrow">e</span><span class="uanim-eyebrow">r</span><span class="uanim-eyebrow">e</span
+        ><span class="uanim-eyebrow">d</span><span class="uanim-eyebrow"> &nbsp; </span><span class="uanim-eyebrow">b</span><span class="uanim-eyebrow">y</span><span class="uanim-eyebrow"> &nbsp; </span><span class="uanim-eyebrow">y</span
+        ><span class="uanim-eyebrow">o</span><span class="uanim-eyebrow">u</span><span class="uanim-eyebrow">.</span>
+      </div>
+      <div class="universe_title">
+        <span class="uanim">Proof of work, beautiful apps</span>
+        <span class="uanim"> anyone can use<span class="grey">, and an</span></span>
+        <span class="uanim">ingenious app platform <span class="grey">to put all </span></span>
+        <span class="uanim"><span class="grey">of its</span> power in your hands.</span>
+      </div>
     </div>
 
     <div class="universe_button-group">
-      <a href="https://universe.tari.com/" target="_blank" class="universe_button-purple">
+      <a href="https://universe.tari.com/" target="_blank" class="universe_button-purple uanim-fade">
         <span class="universe_button-text"> Tari Universe </span>
         <span class="universe_button-arrow">
           <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,12 +36,47 @@ class: subpage home
           </svg>
         </span>
       </a>
-      <a href="https://airdrop.tari.com/" target="_blank" class="universe_button-outline">
+      <a href="https://airdrop.tari.com/" target="_blank" class="universe_button-outline uanim-fade">
         <img src="{{ site.baseurl }}/assets/img/universe/gem.png" alt="Gem" class="universe_button-gem" />
         Airdrop Game
       </a>
     </div>
+
+    <video muted autoplay playsinline poster="{{ site.baseurl }}/assets/img/universe/background.png">
+      <source src="{{ site.baseurl }}/assets/vid/universe-background.mp4" type="video/mp4" />
+    </video>
   </div>
+
+  <script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $('#universe .uanim-eyebrow').each(function (index) {
+          var $element = $(this);
+          setTimeout(function () {
+            $element.addClass('uanim-animated');
+          }, index * 20);
+        });
+      }, 3600);
+
+      setTimeout(function () {
+        $('#universe .uanim').each(function (index) {
+          var $element = $(this);
+          setTimeout(function () {
+            $element.addClass('uanim-animated');
+          }, index * 100);
+        });
+      }, 3200);
+
+      setTimeout(function () {
+        $('#universe .uanim-fade').each(function (index) {
+          var $element = $(this);
+          setTimeout(function () {
+            $element.addClass('uanim-animated');
+          }, index * 200);
+        });
+      }, 4200);
+    });
+  </script>
 
   <div class="home-padding">
     <!--
