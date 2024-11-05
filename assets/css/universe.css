@@ -62,7 +62,8 @@
   overflow: hidden;
 }
 
-#universe video {
+#universe video,
+#universe iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,6 +72,8 @@
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
+
+  transform: scale(1.01);
 
   @media only screen and (max-width: 767px) {
     top: 65px;
