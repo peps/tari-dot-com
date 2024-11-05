@@ -42,9 +42,28 @@ class: subpage home
       </a>
     </div>
 
+    <video muted autoplay playsinline id="universe-video" />
+
+    <script>
+      const video = document.getElementById('universe-video');
+      const videoSrc = 'https://customer-o6ocjyfui1ltpm5h.cloudflarestream.com/160cdec826b66920274b6eae8fe56534/manifest/video.m3u8';
+
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      }
+      // For browsers with native HLS support (Safari)
+      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+
+    <!--
     <video muted autoplay playsinline poster="{{ site.baseurl }}/assets/img/universe/background.png">
       <source src="{{ site.baseurl }}/assets/vid/universe-background.mp4" type="video/mp4" />
     </video>
+    -->
   </div>
 
   <script>
@@ -56,7 +75,7 @@ class: subpage home
             $element.addClass('uanim-animated');
           }, index * 20);
         });
-      }, 3600);
+      }, 4200);
 
       setTimeout(function () {
         $('#universe .uanim').each(function (index) {
@@ -65,7 +84,7 @@ class: subpage home
             $element.addClass('uanim-animated');
           }, index * 100);
         });
-      }, 3200);
+      }, 3600);
 
       setTimeout(function () {
         $('#universe .uanim-fade').each(function (index) {
@@ -74,7 +93,7 @@ class: subpage home
             $element.addClass('uanim-animated');
           }, index * 200);
         });
-      }, 4200);
+      }, 4600);
     });
   </script>
 
