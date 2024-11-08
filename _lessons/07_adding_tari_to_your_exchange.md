@@ -1,11 +1,13 @@
 ---
 layout: lesson
 title: Adding Tari to Your Exchange
-date: 2024-06-28 12:00
+date: 2024-11-06 12:00
 author: stringhandler
 subtitle:
 class: subpage
 ---
+
+**MINOTARI HAS NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED, AND MAY NOT BE OFFERED OR SOLD IN THE U.S. OR TO U.S. PERSONS (AS SUCH TERM IS DEFINED IN RULE 902 AS PROMULGATED BY THE U.S. SECURITIES AND EXCHANGE COMMISSION) UNLESS IT IS REGISTERED UNDER SUCH ACT, OR AN EXEMPTION FROM THE REGISTRATION REQUIREMENTS OF SUCH ACT IS AVAILABLE.**
 
 In this guide, we will cover the basics of getting a Minotari node operational and explain the process of setting up the associated wallets required to run Minotari on your exchange securely:
 
