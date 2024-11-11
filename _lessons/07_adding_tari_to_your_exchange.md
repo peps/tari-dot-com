@@ -77,7 +77,6 @@ Features: PeerFeatures(MESSAGE_PROPAGATION | DHT_STORE_FORWARD)
 6. Restart the node (Ctrl+C twice to quit, then typing `minotari_node` again).
 
 ### Section 2: Creating a wallet
-
 In this section we'll create a wallet address for receiving funds. This wallet will serve as the main repository of your Tari coins.
 
 > NB: This is a crucial step in the process. Creating the wallet in secure environment and following the instructions is important to secure this wallet and prevent malicious actors being able to transfer Tari. Read the instructions carefully. If there is any doubt regarding ANY part of the process, please contact the Tari Community for clarification and assistance.
@@ -159,7 +158,7 @@ If you followed the instructions from the previous section, you should already b
 
 1. While in the wallet interface, press the right arrow twice to get to the `Receive` tab. This tab will list all of the addresses associated with the wallet.
 
- <img src="tariexchangeguide_wallet_addresses.png">
+<img src="../assets/lessons/img/tariexchangeguide/tariexchangeguide_wallet_addresses.png" width=400>
 
 2. Copy all of the information provided, with special note of the `Tari Address one-sided` field. This is the address that users will send funds to for the exchange.
 
@@ -181,8 +180,8 @@ Spend key: f29039796b3430c6927f26bf216b6241dd7fad7f30a6640e8ac95f3d0af51a52
 Minotari Console Wallet running... (Command mode completed)
 
 Press Enter to continue to the wallet, or type q (or quit) followed by Enter.
-
 ```
+
 5. Make note of the `view key` and `spend key`; copy them to an easily referenced place. We will require them in later steps.
 
 6. Type `q` and then press `Enter` to exit the console wallet.
@@ -192,7 +191,6 @@ Press Enter to continue to the wallet, or type q (or quit) followed by Enter.
 > Note: Now is a good time to check your noted keys, seed words and addresses before remove the configuration data in the folder and/or destroying/wiping the device.
 
 ### Section 4: Setting up a read-only wallet to receive deposits
-
 In this section, we will create a second, read-only wallet that will watch for funds received at the address saved in the previous section. If you are integrating an exchange, this is how you can watch for received funds. This wallet will need to be able to access the Internet in some capacity.
 
 > NOTE: This second wallet will not have the ability to spend any funds. While this limits the security risk, it is good practice to maintain security best practices when configuring any system that has access to the chain and has some association with the the main wallet.
@@ -228,16 +226,15 @@ Console Wallet
 
 ```
 Enter view key:  (hex)
-cb6c13f07af23380c7756bbfcd622bc3277ec2cc42abd5ed3d8ddd19fa49060c
+<...view key here...>
 
 Enter the public spend key:  (hex or base58)
-f29039796b3430c6927f26bf216b6241dd7fad7f30a6640e8ac95f3d0af51a52  
+<...public spend key here...>  
 ```
 
-6. You should now see the familiar console wallet. We'll need to configure it further, so close it by pressing `f10` or `Ctrl+Q` and move onto the next section.
+6. You should now see the familiar console wallet. We'll need to configure it further in its accompanying configuration file, so close it for now by pressing `f10` or `Ctrl+Q` and move onto the next section.
 
 ### Section 5: Configuring the read-only wallet
-
 1. Browse to the config file under `~/.tari/mainnet/config/config.toml` (or the folder where you specified the wallet configuration should be stored) and open it in your favourite text editor.
 
 2. Find the section `Wallet Configuration Options (WalletConfig)`. Below is a typical example of the beginning of the wallet configuration section within the `config.toml` file.
@@ -270,7 +267,7 @@ grpc_address = "/ip4/127.0.0.1/tcp/18143"
 
 4. Set the wallet's base node. Set this value to the `minotari_node` you created or chose at the beginning of this guide in **Section 1**.
 
-> Note: The format is `<public_key>::<public address>`. Below is a sample of what these configuration settings look like, using the example data from **Section 1**. You should not use the data below, but insert your own details.
+> Note: The format is `<...public key...>::<...public address...>`, with <...> being replaced with the addresses noted previously. Below is a sample of what these configuration settings look like, using the example data from **Section 1**. You should not use the data below, but insert your own details.
 
 ```toml
 # A custom base node peer that will be used to obtain metadata from, example
@@ -288,8 +285,7 @@ minotari_console_wallet
 You are now ready to receive deposits. In the next section we'll explain how to listen for incoming transactions.
 
 ### Section 6: Listening for incoming transactions
-
-How you wish to listen for incoming transactions (and what you do with them) will depend on your process. For our example, we'll use the gRPC server that is hosted in the read-only wallet we just created to listen for incoming deposits. 
+How you listen for incoming transactions (and what you do with them) will depend on your process. For our example, we'll use the gRPC server that is hosted in the read-only wallet we just created to listen for incoming deposits. 
 
 Reach out to us if you would like an example in your favourite language. You can find more information about the methods available in [wallet.proto here](https://github.com/tari-project/tari/blob/development/applications/minotari_app_grpc/proto/wallet.proto).
 
@@ -390,9 +386,7 @@ call.on('status', (status) => {
 ```
 
 ## Descriptions of Common Activities
-
 ### Section 7: An example for receiving funds
-
 Each exchange will have their own processes, but here is an example of receiving funds from a KYC'ed client. 
 
 1. The client begins the deposit process. For example, clicking on a "Deposit" button.
@@ -405,6 +399,8 @@ Each exchange will have their own processes, but here is an example of receiving
 
 4. The client uses Tari Aurora or another Tari-enabled wallet and sends a non-interactive transaction to the provided address. They must include the provided reference with this transaction.
 
+> Note: Using the Minotari console wallet, for example, the recommendation would be for the user to place your payment reference in the `Payment ID` field.
+
 5. A process similar to the example in **Section 6**, the exchange periodically runs the script to see if there are any new transactions.
 
 6. For new transactions, compare against the list of expected references in their internal database and if there is a match, call the internal system to allocate funds to the client's account.
@@ -415,21 +411,21 @@ In this section we'll perform a withdrawal from the same address we used in **Se
 
 > NOTE: The wallet used to spend funds should not be online for more time than is necessary. It is recommended that the machine running this wallet is secured.
 
-Before we spend funds, we must have a wallet set up with the seed words created in Step 7 of **Section 2**. 
+Before we spend funds, we must have a wallet set up with the seed words created in Step 7 of **Section 2**.
 
 Once the wallet is set up, continue with the steps below.
 
 1. Run the wallet to update the balance
 
 ```
-minotari_console_wallet --password <password> -p "wallet.custom_base_node=<node_pub_key>::<node_pub_address>" --auto-exit sync
+minotari_console_wallet --password <password> -p "wallet.custom_base_node=<...node_pub_key...>::<...node_pub_address...>" --auto-exit sync
 ```
 
-> TIP: The custom base node can also be set as an environment variable `TARI_WALLET__CUSTOM_BASE_NODE`
+> Note: The custom base node can also be set as an environment variable `TARI_WALLET__CUSTOM_BASE_NODE`
 
 2. Validate there are sufficient funds in the wallet
 ```
-minotari_console_wallet --password <password> -p "wallet.custom_base_node=<node_pub_key>::<node_pub_address>" --auto-exit get-balance
+minotari_console_wallet --password <password> -p "wallet.custom_base_node=<...node_pub_key...>::<...node_pub_address...>" --auto-exit get-balance
 ```
 
 ```
@@ -446,16 +442,15 @@ Pending incoming balance: 27960.980255 T
 Pending outgoing balance: 0 µT
 
 Minotari Console Wallet running... (Command mode completed)
-
 ```
 
-3. Send funds to the desired address
+3. Next, send funds to the desired address.
 
 ```
 minotari_console_wallet --password <password> -p "wallet.custom_base_node=<node_pub_key>::<node_pub_address>" --auto-exit send-minotari <amount> <destination>
-
 ```
-Replace `<amount>` and `<destination>` with the amount to send and Tari address to send funds to. Note: The amount is specified in units of 0.000001 XTM. To specify the amount in Tari, you can append the letter `T`. For example, `send-minotari 10000` would send an amount of `0.01 XTM`. `send-minotari 100T` would send an amount of `100 XTM`.
+
+Replace `<amount>` and `<destination>` with the amount to send and Tari address to send funds to. Note: The amount is specified in units of 0.000001 XTM. To specify the amount in Tari, you can append the letter `T`. For example, `send-minotari 10000` would send an amount of `0.01 XTM`. `send-minotari 10000T` would send an amount of `10000 XTM`.
 
 Exchanges should not allow clients to provide interactive Tari Addresses. This can be easily validated by checking the second byte of the address. Specifically, the byte that represents an interactive wallet would be 01 in hexadecimal, or 00000001 in binary.
 
@@ -463,4 +458,3 @@ To break it down:
 * The value is 01 (hexadecimal)
 * In binary, this is 00000001
 * The least significant bit (rightmost bit) is 1, indicating support for interactive transactions
-
