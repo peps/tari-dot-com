@@ -19,16 +19,16 @@ In this guide, we will cover the basics of getting a Minotari node operational a
 This guide assumes that the node will not be used for mining.
 
 ## Node Setup
-In order to accept Tari, you will need to have a Minotari node. While it is possible to use another public node with the correct gRPC methods exposed to the internet, it is recommended that you run your own node. 
+In order to accept Tari, you will need to have a Minotari node. While it is possible to use a public node with the correct gRPC methods exposed to the internet, it is recommended that you run your own node. 
 
 It may also be worth running multiple nodes as backups to ensure availability.
 
-> NOTE: For all servers connected to the internet, they must either be running a Tor client or configure public IP information. Documentation on this is available [here](https://github.com/tari-project/tari#README) and [here](https://github.com/tari-project/tari/discussions/6366). If you are running on Linux, the Tari applications have built-in Tor support, so this can be ignored.
+> Note: For all servers connected to the internet, they must either be running a Tor client or configure their public IP information. Documentation on this is available [here](https://github.com/tari-project/tari#README) and [here](https://github.com/tari-project/tari/discussions/6366). If you are running on Linux, the Tari applications have built-in Tor support, so this can be ignored.
 
 ### Section 1: Create a Minotari Node and run it
 The Minotari node is the base layer node required to receive and monitor transcations. 
 
-> NOTE: If you are using a public `minotari_node`, you can skip this section. Note that you will need the `public key` and the `public address` of the public node in question in order to correctly proceed with this exchange guide.
+> NOTE: If you are using a public Minotari node, you can skip this section. Note that you will need the `public key` and the `public address` of the public node in question in order to correctly proceed with this exchange guide.
 
 1. Download the compiled binaries [here](https://tari.com/downloads/). If you would prefer to compile from source, you will need to follow the instructions located [here.](https://github.com/tari-project/tari#building-from-source)
 
@@ -55,7 +55,7 @@ minotari_node
 
 If a node has not yet been created, it will inform you that a node config file does not exist. You will also be asked if you wish to mine. Select `n` in this case.
 
-Next, you'll be asked if you wish to create a node identity. Select `y`. This is essential for generating the private/public key pair and getting the node recognised by the network.
+4. Next, you'll be asked if you wish to create a node identity. Select `y`. This is essential for generating the private/public key pair and getting the node recognised by the network.
 
 Once done, the Minotari base node will boot up. You'll see a splash page with a list of the various Command Mode (accessible via Ctrl+C) commands available to you. Some useful ones are:
 
@@ -78,7 +78,7 @@ Features: PeerFeatures(MESSAGE_PROPAGATION | DHT_STORE_FORWARD)
 
 ### Section 2: Creating a wallet
 
-In this section we'll create a wallet address for receiving funds. This wallet will serve as the main repository of your funds in Tari.
+In this section we'll create a wallet address for receiving funds. This wallet will serve as the main repository of your Tari coins.
 
 > NB: This is a crucial step in the process. Creating the wallet in secure environment and following the instructions is important to secure this wallet and prevent malicious actors being able to transfer Tari. Read the instructions carefully. If there is any doubt regarding ANY part of the process, please contact the Tari Community for clarification and assistance.
 
@@ -150,7 +150,6 @@ Type the word "confirm" to continue.
 8. At this point, the Minotari wallet will launch in the console interface.
 
 > Note: The following sections deal with configuration of the wallet. While not necessary, an extra safety precaution would be to confirm that the seed words you copied can actually recover the wallet.
-
 
 ### Section 3: Obtain the addresses of the main wallet
 
