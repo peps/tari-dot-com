@@ -4,11 +4,11 @@ title: Tari | Privacy Policy
 permalink: /privacy_policy/
 class: subpage privacy_policy
 ---
-Last Modified: March 20, 2020
+Last Modified: April 23, 2025
 
 # Tari Labs Privacy Policy
 
-Tari Labs (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) recognizes that people who use our website and/or mobile applications (collectively, the &quot;Services&quot;) value their privacy. This privacy policy (the &quot;Policy&quot;) describes how the Services made available by Tari Labs collect, use, share, and store personal information of users of the Services. This Policy applies to the Services on or in which it is posted, linked, or referenced.
+Tari Labs ("Company", "we", "our", or "us") recognizes that people who use our website, **desktop applications** and/or mobile applications (collectively, the "Services") value their privacy. This privacy policy (the "Policy") describes how the Services made available by Tari Labs collect, use, share, and store personal information of users of the Services. This Policy applies to the Services on or in which it is posted, linked, or referenced.
 
 By using the Services, you accept the terms of this Policy and consent to our collection, use, disclosure, and retention of your information as described in this Policy.  If you have not done so already, please also review our User Agreement, which governs your use of the Services. The User Agreement  contains provisions that limit our liability to you and require you to resolve any dispute with us via arbitration on an individual basis and not as part of any class or representative action. IF YOU DO NOT AGREE WITH ANY PART OF THIS PRIVACY POLICY OR OUR USER AGREEMENT, THEN PLEASE DO NOT USE ANY OF THE SERVICES.
 
@@ -17,6 +17,10 @@ Please note that this Policy does not apply to information collected through thi
 If you are visiting this site from the European Union (EU), see our Notice to EU Data Subjects below for our legal bases for processing and transfer of your data.
 
 * [What we collect](#what-we-collect)
+    * [Self-Custody of Personal and Transaction Data](#self-custody-of-personal-and-transaction-data)
+    * [Active Collection of Information](#active-collection-of-information)
+    * [Passive Collection of Information](#passive-collection-of-information)
+    * [Collection of Telemetry and Miner Analytics in Tari Universe](#collection-of-telemetry-and-miner-analytics-in-tari-universe)
 * [Use of personal information](#use-of-personal-information)
 * [Sharing of personal information](#sharing-of-personal-information)
 * [International transfer](#international-transfer)
@@ -35,7 +39,7 @@ If you are visiting this site from the European Union (EU), see our Notice to EU
 
 ### Self-Custody of Personal and Transaction Data
 
-We offer the Services to enable you to self-custody your Tari and similarly seek for you to self-custody your personal information and transaction history.  Accordingly, the information we collect about you is very limited and generally for the purpose of providing and improving the Services we offer to you.
+We offer the Services to enable you to self-custody your Tari **tokens** and similarly seek for you to self-custody your personal information and transaction history.  Accordingly, the information we collect about you is very limited and generally for the purpose of providing and improving the Services we offer to you.
 
 ### Active Collection of Information
 
@@ -46,6 +50,28 @@ We may collect certain information that you voluntarily provide to us which may 
 When you use the Services, some information about your visit is automatically collected. This information includes your IP address, access times, browser type and language, and referring web site addresses.  We collect this information to troubleshoot technical issues, understand how visitors use the Services, provide an experience relevant to the general location associated with your IP address, and to make improvements to our website.
 
 If you arrive at our website by clicking a link, then we may capture information that tracks your visit from that link.
+
+### Collection of Telemetry and Miner Analytics in Tari Universe
+
+If you opt in to allow Tari Universe to use analytics to improve your experience, we collect non-identifying system performance data to improve network efficiency and miner experience. This data may include:
+
+*   Hardware specifications (CPU/GPU model, core/thread count)
+*   Available memory and storage
+*   Network throughput and bandwidth usage
+*   Hash rate performance and runtime behavior
+
+We do not collect any information related to your Tari (XTM) wallet, including:
+
+*   Wallet balances
+*   Transaction history
+*   Private keys or seed phrases
+
+If analytics is enabled, your anonymized application ID may be cryptographically hashed into the coinbase transaction of blocks you help mine. This allows us to measure contribution and performance without compromising your privacy or identity.
+
+If you are logged into the Tari airdrop program, your airdrop user ID may also be included in the coinbase hash to support reward attribution. This inclusion is optional and is only used for legitimate network measurement and incentive purposes.
+
+Your analytics preferences can be managed at any time in the Tari Universe settings. Participation is voluntary and not required to use the application.
+
 
 ## USE OF PERSONAL INFORMATION
 
@@ -101,10 +127,11 @@ We may share information with those who need it to do work for us. These recipie
 
 We will obtain consent for such sharing with service providers where legally required. We enter into written agreements with these third-party service providers requiring them to provide the same level of protection for your personal information as provided under this Policy and limiting their use of your personal information to the specified services provided on our behalf. Such service providers include:
 
-- _Shopify._ We use Shopify&#39;s e-commerce platform to facilitate your purchases made from our website. Shopify stores your data on a secure server behind a firewall and encrypts your credit/debit card information in compliance with PCI DSS standards. You can review Shopify&#39;s privacy policy at [shopify.com/legal/privacy](http://www.shopify.com/legal/privacy). Shopify is certified under the EU-U.S. Privacy Shield and the Swiss-U.S. Privacy Shield.
-- _Substack_.  We use Substack to send newsletters and related communications when you sign up for a newsletter subscription. You can review Substack&#39;s privacy policy at [https://substack.com/privacy](https://substack.com/privacy).
-- _Twilio_.  We use Twilio to send SMS/text messages when you sign up for SMS notifications.  You can review Twilio&#39;s privacy policy at [https://www.twilio.com/legal/privacy](https://www.twilio.com/legal/privacy).  Twilio is certified under the EU-U.S. Privacy Shield and the Swiss-U.S. Privacy Shield.
-- _Matoma_.  We use Matoma to track usage of the Services. You can review Matoma&#39;s privacy policy at [https://matomo.org/privacy-policy/](https://matomo.org/privacy-policy/).
+- _Google Analytics._ We use Google Analytics as one way to uniquely identify site visitors, and track page visits on our Sites.
+- _Shopify._ We use Shopify's e-commerce platform to facilitate your purchases made from our website. Shopify stores your data on a secure server behind a firewall and encrypts your credit/debit card information in compliance with PCI DSS standards. You can review Shopify's privacy policy at [www.shopify.com/legal/privacy](http://www.shopify.com/legal/privacy). Shopify is certified under the EU-U.S. Privacy Shield and the Swiss-U.S. Privacy Shield.
+- _Substack_.  We use Substack to send newsletters and related communications when you sign up for a newsletter subscription. You can review Substack's privacy policy at [https://substack.com/privacy](https://substack.com/privacy).
+- _Twilio_.  We use Twilio to send SMS/text messages when you sign up for SMS notifications.  You can review Twilio's privacy policy at [https://www.twilio.com/legal/privacy](https://www.twilio.com/legal/privacy).  Twilio is certified under the EU-U.S. Privacy Shield and the Swiss-U.S. Privacy Shield.
+- _Matoma_.  We use Matoma to track usage of the Services. You can review Matoma's privacy policy at [https://matomo.org/privacy-policy/](https://matomo.org/privacy-policy/).
 
 ### Other
 
@@ -130,17 +157,17 @@ We employ industry standard security measures designed to protect the security o
 
 If you are a resident of the European Economic Area (EEA), you have certain data protection rights. Tari Labs aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your personal information.
 
-If you wish to be informed about what personal information we hold about you and if you want it to be removed from our systems, please contact us at privacy@tarilabs.com.
+If you wish to be informed about what personal information we hold about you and if you want it to be removed from our systems, please contact us at **privacy@tari.com**.
 
 In certain circumstances, you have the following data protection rights:
 
-**The right to access, update or delete the information we have on you**. Whenever made possible, you can access, update or request deletion of your personal information directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you. **The right of rectification**. You have the right to have your information rectified if that information is inaccurate or incomplete. T **he right to object**. You have the right to object to our processing of your personal information. **The right of restriction**. You have the right to request that we restrict the processing of your personal information. **The right to data portability**. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format. **The right to withdraw consent**. You also have the right to withdraw your consent at any time where Tari Labs relied on your consent to process your personal information.
+**The right to access, update or delete the information we have on you**. Whenever made possible, you can access, update or request deletion of your personal information directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you. **The right of rectification**. You have the right to have your information rectified if that information is inaccurate or incomplete. **The right to object**. You have the right to object to our processing of your personal information. **The right of restriction**. You have the right to request that we restrict the processing of your personal information. **The right to data portability**. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format. **The right to withdraw consent**. You also have the right to withdraw your consent at any time where Tari Labs relied on your consent to process your personal information.
 
 Please note that we may ask you to verify your identity before responding to such requests.
 
 You have the right to complain to a Data Protection Authority about our collection and use of your personal information. For more information, please contact your local data protection authority in the European Economic Area (EEA).
 
-Tracking Technologies Generally
+### Tracking Technologies Generally
 
 Regular cookies may generally be disabled or removed by tools available as part of most commercial browsers, and in some instances blocked in the future by selecting certain settings.
 
@@ -148,7 +175,7 @@ Regular cookies may generally be disabled or removed by tools available as part 
 
 ## CONTACT INFORMATION
 
-We welcome your comments or questions about this Policy, and you may contact us at: privacy@tarilabs.com.
+We welcome your comments or questions about this Policy, and you may contact us at: **privacy@tari.com**.
 
 
 
@@ -162,7 +189,7 @@ Any modifications to this Privacy Policy will be effective upon our posting of t
 
 ## ELIGIBILITY
 
-If you are under the age of majority in your jurisdiction of residence, you may use the Services only with the consent of or under the supervision of your parent or legal guardian. Consistent with the requirements of the Children&#39;s Online Privacy Protection Act (COPPA), if we learn that we have received any information directly from a child under age 13 without first receiving his or her parent&#39;s verified consent, we will use that information only to respond directly to that child (or his or her parent or legal guardian) to inform the child that he or she cannot use the Site and subsequently we will delete that information.
+If you are under the age of majority in your jurisdiction of residence, you may use the Services only with the consent of or under the supervision of your parent or legal guardian. Consistent with the requirements of the Children's Online Privacy Protection Act (COPPA), if we learn that we have received any information directly from a child under age 13 without first receiving his or her parent's verified consent, we will use that information only to respond directly to that child (or his or her parent or legal guardian) to inform the child that he or she cannot use the Site and subsequently we will delete that information.
 
 
 
@@ -176,7 +203,7 @@ Under California Civil Code Section 1789.3, California users are entitled to the
 
 ### Personal Information
 
-With respect to EU data subjects, &quot;personal information,&quot; as used in this Privacy Policy, is equivalent to &quot;personal information&quot; as defined in the European Union General Data Protection Regulation (GDPR).
+With respect to EU data subjects, "personal information," as used in this Privacy Policy, is equivalent to "personal information" as defined in the European Union General Data Protection Regulation (GDPR).
 
 ### Sensitive Data
 
@@ -184,11 +211,11 @@ Some of the information you provide us may constitute sensitive data as defined 
 
 ### Legal Bases for Processing
 
-We only use your personal information as permitted by law. We are required to inform you of the legal bases of our processing of your personal information, which are described below. If you have questions about the legal bases under which we process your personal information, contact us at privacy@tarilabs.com.
+We only use your personal information as permitted by law. We are required to inform you of the legal bases of our processing of your personal information, which are described below. If you have questions about the legal bases under which we process your personal information, contact us at **privacy@tari.com**.
 
 ### Use of data
 
-We uses the collected data for various purposes:
+We use the collected data for various purposes:
 
 - To provide and maintain the Services;
 - To notify you about changes to and/or news and information about the Services;
@@ -201,7 +228,7 @@ We uses the collected data for various purposes:
 
 ### Legal basis for processing personal information under the General Data Protection Regulation (GDPR)
 
-If you are from the European Economic Area (EEA), Tari Labs&#39; legal basis for collecting and using the personal information described in this Privacy Policy depends on the information we collect and the specific context in which we collect it.
+If you are from the European Economic Area (EEA), Tari Labs' legal basis for collecting and using the personal information described in this Privacy Policy depends on the information we collect and the specific context in which we collect it.
 
 Tari Labs may process your personal information because:
 
@@ -242,7 +269,7 @@ Under the GDPR, you have certain rights regarding your personal information. You
 
 **Object**. Object to our reliance on our legitimate interests as the basis of our processing of your personal information that impacts your rights.
 
-You can submit these requests by email to privacy@tarilabs.com. We may request specific information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to legal restrictions. If you would like to submit a complaint about our use of your personal information or response to your requests regarding your personal information, you may contact us at privacy@tarilabs.com or submit a complaint to the data protection regulator in your jurisdiction.
+You can submit these requests by email to **privacy@tari.com**. We may request specific information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to legal restrictions. If you would like to submit a complaint about our use of your personal information or response to your requests regarding your personal information, you may contact us at **privacy@tari.com** or submit a complaint to the data protection regulator in your jurisdiction.
 
 ### Cross-Border Data Transfer
 
